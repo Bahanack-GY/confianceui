@@ -16,7 +16,7 @@ import {
   percent, getPresetRange, oilChangeStatus,
 } from "../../lib/utils";
 import type { Role } from "../../types";
-import type { DatePreset, DateRange } from "../../lib/utils";
+import type { DatePreset} from "../../lib/utils";
 import { cn } from "../../lib/utils";
 
 interface Props { role: Exclude<Role, "DRIVER"> }
