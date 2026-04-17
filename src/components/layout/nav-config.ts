@@ -63,6 +63,7 @@ export const NAV_BY_ROLE: Record<Role, NavSection[]> = {
     {
       items: [
         { to: "/admin",               label: "nav.dashboard",    iconKey: "dashboard" },
+        { to: "/admin/executive",     label: "nav.executive",    iconKey: "chart" },
         { to: "/admin/users",         label: "nav.users",        iconKey: "users" },
       ],
     },

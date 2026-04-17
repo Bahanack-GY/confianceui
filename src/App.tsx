@@ -10,6 +10,7 @@ import Settings from "./pages/Settings";
 
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminUsers from "./pages/admin/Users";
+import ExecutiveDashboard from "./pages/admin/ExecutiveDashboard";
 
 import SupDashboard from "./pages/dispatch-supervisor/Dashboard";
 import SupShiftReports from "./pages/dispatch-supervisor/ShiftReports";
@@ -63,6 +64,7 @@ export default function App() {
 
         {/* ADMIN */}
         <Route path="/admin"                 element={<ProtectedRoute roles={["ADMIN"]}><AdminDashboard /></ProtectedRoute>} />
+        <Route path="/admin/executive"       element={<ProtectedRoute roles={["ADMIN"]}><ExecutiveDashboard /></ProtectedRoute>} />
         <Route path="/admin/users"           element={<ProtectedRoute roles={["ADMIN"]}><AdminUsers /></ProtectedRoute>} />
         <Route path="/admin/shift-reports"   element={<ProtectedRoute roles={["ADMIN"]}><SupShiftReports /></ProtectedRoute>} />
         <Route path="/admin/incidents"       element={<ProtectedRoute roles={["ADMIN"]}><FleetIncidents /></ProtectedRoute>} />

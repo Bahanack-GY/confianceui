@@ -172,3 +172,114 @@ export function fuelByVehicleSeries() {
     return { label: v.plate, value: total || Math.round(30 + Math.random() * 40) };
   });
 }
+
+// ─── Executive / Profitability data ──────────────────────────────────────────
+
+// Estimated revenue per dropoff zone (premium transport, FCFA)
+const ZONE_REVENUE_MAP: Record<string, number> = {
+  "Aéroport":    28000,
+  "Bastos":      20000,
+  "Etoudi":      18000,
+  "Centre-ville": 16000,
+  "Ngousso":     15000,
+  "Biyem-Assi":  13000,
+  "Warda":       12000,
+  "Mvan":        11000,
+};
+
+export function tripRevenue(tr: Trip): number {
+  if (tr.status !== "COMPLETED") return 0;
+  return ZONE_REVENUE_MAP[tr.dropoff] ?? 13000;
+}
+
+// Unique pickup zones (demand zones)
+export const PICKUP_ZONES: string[] = [
+  "Bastos", "Omnisports", "Nlongkak", "Tsinga",
+  "Essos", "Mvog-Mbi", "Nkolbisson", "Ekounou",
+];
+
+export interface ZoneStat {
+  zone: string;
+  totalTrips: number;
+  completed: number;
+  cancelled: number;
+  completionRate: number;
+  revenue: number;
+  avgRevenue: number;
+  incidents: number;
+}
+
+export function zonalStats(): ZoneStat[] {
+  const totalFuel = fuelEntries.reduce((s, f) => s + f.amount, 0);
+  return PICKUP_ZONES.map((zone) => {
+    const zoneTrips   = trips.filter((t) => t.pickup === zone);
+    const completed   = zoneTrips.filter((t) => t.status === "COMPLETED");
+    const cancelled   = zoneTrips.filter((t) => t.status === "CANCELLED" || t.status === "REFUSED");
+    const revenue     = completed.reduce((s, t) => s + tripRevenue(t), 0);
+    const zoneInc     = incidents.filter((i) => i.location === zone);
+    const fuelShare   = Math.round((zoneTrips.length / Math.max(1, trips.length)) * totalFuel);
+    return {
+      zone,
+      totalTrips:     zoneTrips.length,
+      completed:      completed.length,
+      cancelled:      cancelled.length,
+      completionRate: completed.length / Math.max(1, zoneTrips.length),
+      revenue,
+      avgRevenue:     revenue / Math.max(1, completed.length),
+      incidents:      zoneInc.length,
+      fuelCostShare:  fuelShare,
+    };
+  }).sort((a, b) => b.totalTrips - a.totalTrips);
+}
+
+// 7-day revenue / cost / margin series (represents full operational scale)
+export function revenueSeries() {
+  const days = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
+  return days.map((day, i) => {
+    const revenue = 580000 + (i * 35000) % 140000;
+    const cost    = 195000 + (i * 25000) % 80000;
+    return { day, revenue, cost, margin: revenue - cost };
+  });
+}
+
+// Revenue attributed per pickup zone (bar chart)
+export function revenueByZone(): Array<{ label: string; value: number }> {
+  return zonalStats().map((z) => ({ label: z.zone, value: z.revenue }));
+}
+
+// Trip outcome split for donut (executive view)
+export function tripOutcomeSplit(): Array<{ label: string; value: number }> {
+  const counts: Record<string, number> = {};
+  trips.forEach((t) => { counts[t.status] = (counts[t.status] ?? 0) + 1; });
+  const labels: Record<string, string> = {
+    COMPLETED: "Complétées", IN_PROGRESS: "En cours", ASSIGNED: "Assignées",
+    CANCELLED: "Annulées", REFUSED: "Refusées", PENDING: "En attente",
+  };
+  return Object.entries(counts).map(([k, v]) => ({ label: labels[k] ?? k, value: v }));
+}
+
+// Fleet utilisation split for donut
+export function fleetStatusSplit(): Array<{ label: string; value: number }> {
+  const labels: Record<string, string> = {
+    AVAILABLE: "Disponible", ON_TRIP: "En course",
+    MAINTENANCE: "Maintenance", OUT_OF_SERVICE: "Hors service",
+  };
+  const counts: Record<string, number> = {};
+  vehicles.forEach((v) => { counts[v.status] = (counts[v.status] ?? 0) + 1; });
+  return Object.entries(counts).map(([k, v]) => ({ label: labels[k] ?? k, value: v }));
+}
+
+// Aggregated weekly totals for KPI cards
+export function weeklyRevenueTotals() {
+  const series = revenueSeries();
+  const totalRevenue  = series.reduce((s, d) => s + d.revenue, 0);
+  const totalCost     = series.reduce((s, d) => s + d.cost, 0);
+  const totalTripsNum = kpiSeriesTrips().reduce((s, d) => s + d.completed, 0);
+  return {
+    revenue:        totalRevenue,
+    cost:           totalCost,
+    margin:         totalRevenue - totalCost,
+    marginRate:     (totalRevenue - totalCost) / totalRevenue,
+    revenuePerTrip: totalRevenue / Math.max(1, totalTripsNum),
+  };
+}

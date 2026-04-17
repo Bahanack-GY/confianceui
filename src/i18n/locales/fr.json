@@ -83,7 +83,8 @@
     "procRequests": "Demandes d'achat",
     "procSuppliers": "Fournisseurs",
     "procServices": "Prestations",
-    "procExpenses": "Dépenses"
+    "procExpenses": "Dépenses",
+    "executive": "Vue Exécutive"
   },
   "procurement": {
     "title": "Achats & Approvisionnement",
@@ -197,6 +198,36 @@
       "byDepartment": "Dépenses par département",
       "recentRequests": "Demandes récentes"
     }
+  },
+  "executive": {
+    "title": "Tableau de bord Exécutif",
+    "subtitle": "Performance opérationnelle & Rentabilité",
+    "revenue": "Chiffre d'affaires",
+    "opCost": "Coûts opérationnels",
+    "margin": "Marge brute",
+    "marginRate": "Taux de marge",
+    "revenuePerTrip": "Revenu par course",
+    "fuelAsRevenue": "Carburant / CA",
+    "revenueCostChart": "Revenu vs Coûts (7 jours)",
+    "tripOutcomes": "Répartition des courses",
+    "zonal": {
+      "title": "Analyse Zonale",
+      "subtitle": "Performance & revenus par zone de départ",
+      "allZones": "Toutes les zones",
+      "zone": "Zone",
+      "totalTrips": "Courses",
+      "completed": "Complétées",
+      "cancelled": "Annulées / Refusées",
+      "completionRate": "Taux",
+      "revenue": "Revenu (FCFA)",
+      "avgRevenue": "Moy. / course",
+      "incidents": "Incidents",
+      "detailTitle": "Zoom zone",
+      "noIncidents": "Aucun"
+    },
+    "revenueByZone": "Revenu par zone de départ",
+    "fleetUtil": "Utilisation de la flotte",
+    "topRoutes": "Top destinations par revenu"
   },
   "auth": {
     "welcome": "Bon retour",

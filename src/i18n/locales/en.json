@@ -83,7 +83,8 @@
     "procRequests": "Purchase requests",
     "procSuppliers": "Suppliers",
     "procServices": "Services",
-    "procExpenses": "Expenses"
+    "procExpenses": "Expenses",
+    "executive": "Executive View"
   },
   "procurement": {
     "title": "Procurement",
@@ -197,6 +198,36 @@
       "byDepartment": "Expenses by department",
       "recentRequests": "Recent requests"
     }
+  },
+  "executive": {
+    "title": "Executive Dashboard",
+    "subtitle": "Operational performance & Profitability",
+    "revenue": "Revenue",
+    "opCost": "Operational costs",
+    "margin": "Gross margin",
+    "marginRate": "Margin rate",
+    "revenuePerTrip": "Revenue per trip",
+    "fuelAsRevenue": "Fuel / Revenue",
+    "revenueCostChart": "Revenue vs Costs (7 days)",
+    "tripOutcomes": "Trip outcomes",
+    "zonal": {
+      "title": "Zonal Analysis",
+      "subtitle": "Performance & revenue by departure zone",
+      "allZones": "All zones",
+      "zone": "Zone",
+      "totalTrips": "Trips",
+      "completed": "Completed",
+      "cancelled": "Cancelled / Refused",
+      "completionRate": "Rate",
+      "revenue": "Revenue (FCFA)",
+      "avgRevenue": "Avg / trip",
+      "incidents": "Incidents",
+      "detailTitle": "Zone detail",
+      "noIncidents": "None"
+    },
+    "revenueByZone": "Revenue by departure zone",
+    "fleetUtil": "Fleet utilisation",
+    "topRoutes": "Top destinations by revenue"
   },
   "auth": {
     "welcome": "Welcome back",
