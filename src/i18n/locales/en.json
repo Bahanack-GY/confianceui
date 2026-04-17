@@ -1,0 +1,445 @@
+{
+  "app": {
+    "name": "Confiance Mobilité",
+    "tagline": "Urban Transport Premium Comfort"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "submit": "Submit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading...",
+    "noData": "No data",
+    "all": "All",
+    "yes": "Yes",
+    "no": "No",
+    "view": "View",
+    "details": "Details",
+    "actions": "Actions",
+    "status": "Status",
+    "date": "Date",
+    "time": "Time",
+    "today": "Today",
+    "week": "Week",
+    "month": "Month",
+    "language": "Language",
+    "logout": "Log out",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signIn": "Sign in",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "emailOrPhone": "Email or phone",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "required": "Required",
+    "optional": "Optional",
+    "notifications": "Notifications",
+    "liveUpdates": "Live updates",
+    "realtime": "Real-time"
+  },
+  "role": {
+    "ADMIN": "Administrator",
+    "DISPATCH_SUPERVISOR": "Dispatch Supervisor",
+    "DISPATCH_AGENT": "Dispatch Agent",
+    "FLEET_MANAGER": "Fleet Manager",
+    "DRIVER": "Driver"
+  },
+  "shift": {
+    "MORNING": "Morning",
+    "EVENING": "Evening",
+    "NIGHT": "Night",
+    "slot": "Slot",
+    "concerned": "Shift concerned"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "shiftReports": "Shift reports",
+    "handover": "Handover",
+    "incidents": "Incidents",
+    "trips": "Trips",
+    "vehicles": "Vehicles",
+    "drivers": "Drivers",
+    "driverSheets": "Driver sheets",
+    "fuel": "Fuel",
+    "checklists": "Checklists",
+    "compliance": "Compliance",
+    "myChecklist": "My checklist",
+    "myActivity": "My activity",
+    "reportIncident": "Report incident",
+    "myReports": "My reports",
+    "procDashboard": "Dashboard",
+    "procRequests": "Purchase requests",
+    "procSuppliers": "Suppliers",
+    "procServices": "Services",
+    "procExpenses": "Expenses"
+  },
+  "procurement": {
+    "title": "Procurement",
+    "module": "Procurement",
+    "request": {
+      "title": "Purchase requests",
+      "new": "New request",
+      "steps": {
+        "info": "Information",
+        "details": "Details",
+        "document": "Document"
+      },
+      "fields": {
+        "requester": "Requester",
+        "department": "Department",
+        "type": "Type",
+        "category": "Category",
+        "description": "Description",
+        "estimatedAmount": "Estimated amount (FCFA)",
+        "suggestedSupplier": "Suggested supplier",
+        "attachments": "Attachment (photo / document)",
+        "validationNote": "Validation note"
+      },
+      "type": {
+        "purchase": "Purchase",
+        "service": "Service"
+      },
+      "status": {
+        "PENDING": "Pending",
+        "APPROVED": "Approved",
+        "REJECTED": "Rejected"
+      },
+      "validate": "Approve",
+      "reject": "Reject",
+      "validated": "Request approved",
+      "rejected": "Request rejected",
+      "created": "Request created"
+    },
+    "supplier": {
+      "title": "Suppliers",
+      "new": "New supplier",
+      "fields": {
+        "name": "Name",
+        "category": "Category",
+        "contact": "Contact",
+        "city": "City",
+        "status": "Status"
+      },
+      "status": {
+        "ACTIVE": "Active",
+        "TO_AVOID": "To avoid"
+      },
+      "created": "Supplier added",
+      "fiscal": {
+        "title": "Legal & fiscal compliance",
+        "nui": "NUI (Tax Identification Number)",
+        "rccm": "RCCM (Trade Register)",
+        "fiscalStatus": "Tax compliance certificate",
+        "fiscalAttestationExpiry": "Certificate expiry date",
+        "cnpsStatus": "CNPS compliance",
+        "status": {
+          "COMPLIANT": "Compliant",
+          "NON_COMPLIANT": "Non-compliant",
+          "PENDING": "Pending",
+          "UNKNOWN": "Unknown"
+        },
+        "expiringWarning": "Certificate expiring soon",
+        "expiredWarning": "Certificate expired"
+      }
+    },
+    "service": {
+      "title": "Service tracking",
+      "fields": {
+        "supplier": "Supplier",
+        "description": "Description",
+        "status": "Status",
+        "startDate": "Start date",
+        "endDate": "End date"
+      },
+      "status": {
+        "PENDING": "Pending",
+        "IN_PROGRESS": "In progress",
+        "DONE": "Done"
+      },
+      "updated": "Status updated"
+    },
+    "expense": {
+      "title": "Expense tracking",
+      "new": "New expense",
+      "fields": {
+        "supplier": "Supplier",
+        "amount": "Amount (FCFA)",
+        "category": "Category",
+        "department": "Department",
+        "paymentStatus": "Payment status",
+        "date": "Date"
+      },
+      "paymentStatus": {
+        "PENDING": "Pending",
+        "PAID": "Paid",
+        "PARTIAL": "Partial"
+      },
+      "created": "Expense recorded"
+    },
+    "dashboard": {
+      "totalExpenses": "Total expenses",
+      "pendingRequests": "Pending requests",
+      "approvedRequests": "Approved requests",
+      "activeSuppliers": "Active suppliers",
+      "byCategory": "Expenses by category",
+      "byDepartment": "Expenses by department",
+      "recentRequests": "Recent requests"
+    }
+  },
+  "auth": {
+    "welcome": "Welcome back",
+    "signInSubtitle": "Sign in to your Confiance Mobilité workspace",
+    "invalidCredentials": "Invalid credentials",
+    "useDemoAccount": "Demo accounts"
+  },
+  "dashboard": {
+    "overview": "Overview",
+    "kpi": {
+      "totalTrips": "Total trips",
+      "successfulTrips": "Successful trips",
+      "cancelledTrips": "Cancelled trips",
+      "refusedTrips": "Refused trips",
+      "successRate": "Success rate",
+      "cancelRate": "Cancel rate",
+      "avgWaitTime": "Avg. wait time",
+      "avgAssignTime": "Avg. assign time",
+      "reassignments": "Reassignments",
+      "openIncidents": "Open incidents",
+      "fleetAvailable": "Fleet available",
+      "driversOnShift": "Drivers on shift",
+      "fuelSpend": "Fuel spend",
+      "avgConsumption": "Avg. consumption",
+      "documentsExpiring": "Expiring documents"
+    },
+    "charts": {
+      "tripsOverTime": "Trips over time",
+      "cancelReasons": "Cancellation reasons",
+      "incidentsByType": "Incidents by type",
+      "fuelByVehicle": "Fuel by vehicle"
+    }
+  },
+  "shiftReport": {
+    "title": "End-of-shift report",
+    "new": "New report",
+    "sections": {
+      "general": "General information",
+      "operations": "Operations conducted",
+      "performance": "Performance",
+      "handover": "Handover",
+      "handoffIndications": "Takeover instructions"
+    },
+    "fields": {
+      "supervisorName": "Dispatch supervisor name",
+      "agents": "Supervised dispatch agents",
+      "totalTrips": "Total trips of the day",
+      "successTrips": "Successful trips",
+      "cancelledTrips": "Cancelled trips",
+      "cancelReasons": "Cancellation reasons",
+      "refusedTrips": "Refused trips",
+      "refuseReasons": "Refusal reasons",
+      "avgWaitTime": "Avg. wait time (min)",
+      "avgAssignTime": "Avg. assign time (min)",
+      "reassignments": "Number of reassignments",
+      "cancelRate": "Cancel rate",
+      "successRate": "Success rate",
+      "ongoingTrips": "Ongoing trips",
+      "ongoingIncidents": "Ongoing incidents",
+      "criticalZones": "Critical zones",
+      "driversFleet": "Drivers and fleet",
+      "priorities": "Operational priorities",
+      "handoffNotes": "Describe any process that will facilitate the handover"
+    }
+  },
+  "incident": {
+    "title": "Incident report",
+    "new": "New incident",
+    "matrix": "Incident matrix",
+    "sections": {
+      "general": "General information",
+      "details": "Incident details",
+      "damages": "Damage description",
+      "actions": "Corrective actions",
+      "people": "People involved",
+      "consequences": "Consequences"
+    },
+    "fields": {
+      "reportedBy": "Reported by",
+      "service": "Service",
+      "email": "Email",
+      "location": "Location",
+      "tripId": "Trip ID",
+      "vehicleId": "Vehicle ID",
+      "plate": "License plate",
+      "type": "Incident type",
+      "description": "Incident details",
+      "damages": "Vehicle / people damages",
+      "actions": "Corrective actions taken or to be taken",
+      "driverName": "Driver name",
+      "peopleInvolved": "People involved",
+      "supervisorRecommendation": "Supervisor recommendation"
+    },
+    "type": {
+      "ACCIDENT": "Accident",
+      "ACCIDENT_MINOR": "Minor accident",
+      "THEFT": "Theft",
+      "FIRE": "Fire",
+      "SECURITY": "Security",
+      "BREAKDOWN": "Breakdown",
+      "CLIENT_CONFLICT": "Client conflict",
+      "INAPPROPRIATE_BEHAVIOR": "Inappropriate behavior",
+      "OTHER": "Other"
+    },
+    "consequence": {
+      "NONE": "None",
+      "DELAY": "Delay",
+      "MATERIAL": "Material damage",
+      "COMPLAINT": "Client complaint"
+    },
+    "recommendation": {
+      "NONE": "No action",
+      "WARNING": "Warning",
+      "SUSPENSION": "Suspension",
+      "OTHER": "Other"
+    },
+    "status": {
+      "OPEN": "Open",
+      "IN_PROGRESS": "In progress",
+      "CLOSED": "Closed"
+    },
+    "photos": {
+      "title": "Photos / Attachments",
+      "hint": "Drag photos here or click to browse",
+      "hintSub": "JPG, PNG, HEIC · max {{max}} photos",
+      "remove": "Remove",
+      "count": "{{count}} photo(s) selected",
+      "maxReached": "Maximum number of photos reached"
+    }
+  },
+  "dateFilter": {
+    "today": "Today",
+    "week": "7 days",
+    "month": "This month",
+    "custom": "Custom",
+    "from": "From",
+    "to": "To",
+    "allPeriods": "All periods",
+    "noResults": "No results for this period"
+  },
+  "checklist": {
+    "title": "Daily Check-list",
+    "subtitle": "To be completed at the start of each shift",
+    "submit": "Submit checklist",
+    "element": "Item to check",
+    "state": "State",
+    "observations": "Observations",
+    "conform": "Conforming",
+    "toCheck": "To verify",
+    "additionalRemarks": "Additional remarks",
+    "sections": {
+      "header": "Header",
+      "items": "Items to verify"
+    },
+    "items": {
+      "body": "Bodywork (scratches, bumps)",
+      "tires": "Tire condition & pressure",
+      "levels": "Levels (oil, brake fluid, washer)",
+      "lights": "Lights & indicators",
+      "cleanliness": "Interior / exterior cleanliness",
+      "documents": "Onboard documents (insurance, registration)"
+    },
+    "kmStart": "Starting mileage"
+  },
+  "fuel": {
+    "title": "Fuel consumption report",
+    "new": "New fill-up",
+    "fields": {
+      "date": "Date",
+      "vehicle": "Vehicle",
+      "liters": "Liters",
+      "amount": "Amount",
+      "km": "Odometer km",
+      "fuelType": "Fuel type",
+      "station": "Station"
+    }
+  },
+  "trip": {
+    "status": {
+      "PENDING": "Pending",
+      "ASSIGNED": "Assigned",
+      "IN_PROGRESS": "In progress",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled",
+      "REFUSED": "Refused"
+    }
+  },
+  "driver": {
+    "title": "Drivers",
+    "status": {
+      "ACTIVE": "Active",
+      "ON_LEAVE": "On leave",
+      "SUSPENDED": "Suspended"
+    },
+    "sheet": "Daily driver sheet",
+    "fields": {
+      "name": "Driver name",
+      "driverId": "Driver ID",
+      "vehicleId": "Vehicle ID",
+      "trips": "Number of trips",
+      "accepted": "Accepted trips",
+      "refused": "Refused trips",
+      "cancelled": "Cancelled trips",
+      "loginAt": "Login time",
+      "breakAt": "Break time",
+      "logoutAt": "Logout time",
+      "refuelAt": "Refueling time",
+      "punctuality": "Punctuality",
+      "presentation": "Presentation",
+      "rulesCompliance": "Rules compliance",
+      "clientFeedback": "Client feedback",
+      "driverFeedback": "Driver feedback",
+      "lateCount": "Late count",
+      "absences": "Absences",
+      "incidents": "Incidents",
+      "supervisorComment": "Supervisor comment"
+    }
+  },
+  "user": {
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    }
+  },
+  "vehicle": {
+    "title": "Vehicles",
+    "fields": {
+      "plate": "Plate",
+      "brand": "Brand",
+      "model": "Model",
+      "year": "Year",
+      "fuelType": "Fuel",
+      "currentKm": "Current km",
+      "status": "Status",
+      "insuranceExpiry": "Insurance expiry",
+      "registrationExpiry": "Registration expiry",
+      "driver": "Assigned driver"
+    },
+    "status": {
+      "AVAILABLE": "Available",
+      "ON_TRIP": "On trip",
+      "MAINTENANCE": "Maintenance",
+      "OUT_OF_SERVICE": "Out of service"
+    }
+  }
+}

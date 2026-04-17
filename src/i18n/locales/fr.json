@@ -1,0 +1,445 @@
+{
+  "app": {
+    "name": "Confiance Mobilité",
+    "tagline": "Urban Transport Premium Comfort"
+  },
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "create": "Créer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "export": "Exporter",
+    "submit": "Soumettre",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "loading": "Chargement...",
+    "noData": "Aucune donnée",
+    "all": "Tous",
+    "yes": "Oui",
+    "no": "Non",
+    "view": "Voir",
+    "details": "Détails",
+    "actions": "Actions",
+    "status": "Statut",
+    "date": "Date",
+    "time": "Heure",
+    "today": "Aujourd'hui",
+    "week": "Semaine",
+    "month": "Mois",
+    "language": "Langue",
+    "logout": "Se déconnecter",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "signIn": "Se connecter",
+    "email": "Email",
+    "phone": "Téléphone",
+    "password": "Mot de passe",
+    "emailOrPhone": "Email ou téléphone",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié ?",
+    "required": "Requis",
+    "optional": "Optionnel",
+    "notifications": "Notifications",
+    "liveUpdates": "Mises à jour en direct",
+    "realtime": "Temps réel"
+  },
+  "role": {
+    "ADMIN": "Administrateur",
+    "DISPATCH_SUPERVISOR": "Superviseur Dispatch",
+    "DISPATCH_AGENT": "Agent Dispatch",
+    "FLEET_MANAGER": "Gestionnaire de Flotte",
+    "DRIVER": "Chauffeur"
+  },
+  "shift": {
+    "MORNING": "Matin",
+    "EVENING": "Soir",
+    "NIGHT": "Nuit",
+    "slot": "Créneau",
+    "concerned": "Shift concerné"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "users": "Utilisateurs",
+    "shiftReports": "Rapports de shift",
+    "handover": "Passation",
+    "incidents": "Incidents",
+    "trips": "Courses",
+    "vehicles": "Véhicules",
+    "drivers": "Chauffeurs",
+    "driverSheets": "Fiches chauffeur",
+    "fuel": "Carburant",
+    "checklists": "Check-lists",
+    "compliance": "Conformité",
+    "myChecklist": "Ma check-list",
+    "myActivity": "Mon activité",
+    "reportIncident": "Signaler un incident",
+    "myReports": "Mes rapports",
+    "procDashboard": "Tableau de bord",
+    "procRequests": "Demandes d'achat",
+    "procSuppliers": "Fournisseurs",
+    "procServices": "Prestations",
+    "procExpenses": "Dépenses"
+  },
+  "procurement": {
+    "title": "Achats & Approvisionnement",
+    "module": "Achats",
+    "request": {
+      "title": "Demandes d'achat",
+      "new": "Nouvelle demande",
+      "steps": {
+        "info": "Informations",
+        "details": "Détails",
+        "document": "Document"
+      },
+      "fields": {
+        "requester": "Demandeur",
+        "department": "Département",
+        "type": "Type",
+        "category": "Catégorie",
+        "description": "Description",
+        "estimatedAmount": "Montant estimé (FCFA)",
+        "suggestedSupplier": "Fournisseur suggéré",
+        "attachments": "Pièce jointe (photo / document)",
+        "validationNote": "Note de validation"
+      },
+      "type": {
+        "purchase": "Achat",
+        "service": "Prestation"
+      },
+      "status": {
+        "PENDING": "En attente",
+        "APPROVED": "Validé",
+        "REJECTED": "Rejeté"
+      },
+      "validate": "Valider",
+      "reject": "Rejeter",
+      "validated": "Demande validée",
+      "rejected": "Demande rejetée",
+      "created": "Demande créée"
+    },
+    "supplier": {
+      "title": "Fournisseurs",
+      "new": "Nouveau fournisseur",
+      "fields": {
+        "name": "Nom",
+        "category": "Catégorie",
+        "contact": "Contact",
+        "city": "Ville",
+        "status": "Statut"
+      },
+      "status": {
+        "ACTIVE": "Actif",
+        "TO_AVOID": "À éviter"
+      },
+      "created": "Fournisseur ajouté",
+      "fiscal": {
+        "title": "Conformité juridique & fiscale",
+        "nui": "NUI (Numéro Unique d'Identification)",
+        "rccm": "RCCM (Registre du Commerce)",
+        "fiscalStatus": "Attestation de régularité fiscale",
+        "fiscalAttestationExpiry": "Date d'expiration attestation",
+        "cnpsStatus": "Conformité CNPS",
+        "status": {
+          "COMPLIANT": "Conforme",
+          "NON_COMPLIANT": "Non conforme",
+          "PENDING": "En attente",
+          "UNKNOWN": "Non renseigné"
+        },
+        "expiringWarning": "Attestation expirant bientôt",
+        "expiredWarning": "Attestation expirée"
+      }
+    },
+    "service": {
+      "title": "Suivi des prestations",
+      "fields": {
+        "supplier": "Fournisseur",
+        "description": "Description",
+        "status": "Statut",
+        "startDate": "Date début",
+        "endDate": "Date fin"
+      },
+      "status": {
+        "PENDING": "En attente",
+        "IN_PROGRESS": "En cours",
+        "DONE": "Terminé"
+      },
+      "updated": "Statut mis à jour"
+    },
+    "expense": {
+      "title": "Suivi des dépenses",
+      "new": "Nouvelle dépense",
+      "fields": {
+        "supplier": "Fournisseur",
+        "amount": "Montant (FCFA)",
+        "category": "Catégorie",
+        "department": "Département",
+        "paymentStatus": "Statut paiement",
+        "date": "Date"
+      },
+      "paymentStatus": {
+        "PENDING": "En attente",
+        "PAID": "Payé",
+        "PARTIAL": "Partiel"
+      },
+      "created": "Dépense enregistrée"
+    },
+    "dashboard": {
+      "totalExpenses": "Dépenses totales",
+      "pendingRequests": "Demandes en attente",
+      "approvedRequests": "Demandes validées",
+      "activeSuppliers": "Fournisseurs actifs",
+      "byCategory": "Dépenses par catégorie",
+      "byDepartment": "Dépenses par département",
+      "recentRequests": "Demandes récentes"
+    }
+  },
+  "auth": {
+    "welcome": "Bon retour",
+    "signInSubtitle": "Connectez-vous à votre espace Confiance Mobilité",
+    "invalidCredentials": "Identifiants invalides",
+    "useDemoAccount": "Comptes de démonstration"
+  },
+  "dashboard": {
+    "overview": "Vue d'ensemble",
+    "kpi": {
+      "totalTrips": "Courses totales",
+      "successfulTrips": "Courses réussies",
+      "cancelledTrips": "Courses annulées",
+      "refusedTrips": "Courses refusées",
+      "successRate": "Taux de réussite",
+      "cancelRate": "Taux d'annulation",
+      "avgWaitTime": "Temps d'attente moyen",
+      "avgAssignTime": "Temps d'assignation moyen",
+      "reassignments": "Réassignations",
+      "openIncidents": "Incidents ouverts",
+      "fleetAvailable": "Flotte disponible",
+      "driversOnShift": "Chauffeurs en shift",
+      "fuelSpend": "Dépense carburant",
+      "avgConsumption": "Consommation moyenne",
+      "documentsExpiring": "Documents expirants"
+    },
+    "charts": {
+      "tripsOverTime": "Évolution des courses",
+      "cancelReasons": "Motifs d'annulation",
+      "incidentsByType": "Incidents par type",
+      "fuelByVehicle": "Carburant par véhicule"
+    }
+  },
+  "shiftReport": {
+    "title": "Rapport de fin de shift",
+    "new": "Nouveau rapport",
+    "sections": {
+      "general": "Informations générales",
+      "operations": "Opérations menées",
+      "performance": "Performances",
+      "handover": "Passation",
+      "handoffIndications": "Indications pour prise en main"
+    },
+    "fields": {
+      "supervisorName": "Nom du superviseur dispatch",
+      "agents": "Agents dispatch supervisés",
+      "totalTrips": "Nombre total de courses du jour",
+      "successTrips": "Courses effectuées avec succès",
+      "cancelledTrips": "Courses annulées",
+      "cancelReasons": "Raisons de l'annulation",
+      "refusedTrips": "Courses refusées",
+      "refuseReasons": "Raisons du refus",
+      "avgWaitTime": "Temps moyen d'attente (min)",
+      "avgAssignTime": "Temps moyen d'assignation (min)",
+      "reassignments": "Nombre de réassignations",
+      "cancelRate": "Taux d'annulation",
+      "successRate": "Taux de réussite",
+      "ongoingTrips": "Courses en cours",
+      "ongoingIncidents": "Incidents en cours",
+      "criticalZones": "Zones critiques",
+      "driversFleet": "Chauffeurs et flotte",
+      "priorities": "Priorités opérationnelles",
+      "handoffNotes": "Décrire tout process qui permettra de faciliter la passation de service"
+    }
+  },
+  "incident": {
+    "title": "Rapport d'incident",
+    "new": "Nouvel incident",
+    "matrix": "Matrice des incidents",
+    "sections": {
+      "general": "Informations générales",
+      "details": "Détails de l'incident",
+      "damages": "Description des dommages",
+      "actions": "Mesures correctives",
+      "people": "Personnes impliquées",
+      "consequences": "Conséquences"
+    },
+    "fields": {
+      "reportedBy": "Incident signalé par",
+      "service": "Service",
+      "email": "Email",
+      "location": "Emplacement",
+      "tripId": "ID Course",
+      "vehicleId": "ID Véhicule",
+      "plate": "Plaque d'immatriculation",
+      "type": "Type d'incident",
+      "description": "Détails de l'incident",
+      "damages": "Dommages liés au véhicule / personnes",
+      "actions": "Mesures correctives prises ou à prendre",
+      "driverName": "Nom du chauffeur",
+      "peopleInvolved": "Personnes impliquées",
+      "supervisorRecommendation": "Recommandations superviseur"
+    },
+    "type": {
+      "ACCIDENT": "Accident",
+      "ACCIDENT_MINOR": "Accident mineur",
+      "THEFT": "Vol",
+      "FIRE": "Incendie",
+      "SECURITY": "Sécurité",
+      "BREAKDOWN": "Panne",
+      "CLIENT_CONFLICT": "Conflit client",
+      "INAPPROPRIATE_BEHAVIOR": "Comportement inapproprié",
+      "OTHER": "Autre"
+    },
+    "consequence": {
+      "NONE": "Aucune",
+      "DELAY": "Retard",
+      "MATERIAL": "Dégâts matériels",
+      "COMPLAINT": "Plainte client"
+    },
+    "recommendation": {
+      "NONE": "Aucune action",
+      "WARNING": "Avertissement",
+      "SUSPENSION": "Suspension",
+      "OTHER": "Autre"
+    },
+    "status": {
+      "OPEN": "Ouvert",
+      "IN_PROGRESS": "En cours",
+      "CLOSED": "Clos"
+    },
+    "photos": {
+      "title": "Photos / Pièces jointes",
+      "hint": "Glissez vos photos ici ou cliquez pour parcourir",
+      "hintSub": "JPG, PNG, HEIC · max {{max}} photos",
+      "remove": "Supprimer",
+      "count": "{{count}} photo(s) sélectionnée(s)",
+      "maxReached": "Nombre maximum de photos atteint"
+    }
+  },
+  "dateFilter": {
+    "today": "Aujourd'hui",
+    "week": "7 jours",
+    "month": "Ce mois",
+    "custom": "Personnalisé",
+    "from": "Du",
+    "to": "Au",
+    "allPeriods": "Toutes périodes",
+    "noResults": "Aucun résultat pour cette période"
+  },
+  "checklist": {
+    "title": "Fiche de Contrôle Journalier",
+    "subtitle": "À remplir au début de chaque shift",
+    "submit": "Valider la check-list",
+    "element": "Élément à vérifier",
+    "state": "État",
+    "observations": "Observations",
+    "conform": "Conforme",
+    "toCheck": "À vérifier",
+    "additionalRemarks": "Remarques complémentaires",
+    "sections": {
+      "header": "En-tête",
+      "items": "Éléments à vérifier"
+    },
+    "items": {
+      "body": "Carrosserie (rayures, chocs)",
+      "tires": "État et pression des pneus",
+      "levels": "Niveaux (huile, liquide de frein, lave-glace)",
+      "lights": "Éclairage et clignotants",
+      "cleanliness": "Propreté intérieure / extérieure",
+      "documents": "Documents de bord (assurance, carte grise)"
+    },
+    "kmStart": "Kilométrage au départ"
+  },
+  "fuel": {
+    "title": "Rapport de Consommation Carburant",
+    "new": "Nouveau plein",
+    "fields": {
+      "date": "Date",
+      "vehicle": "Véhicule",
+      "liters": "Litres",
+      "amount": "Montant",
+      "km": "KM au compteur",
+      "fuelType": "Type carburant",
+      "station": "Station"
+    }
+  },
+  "trip": {
+    "status": {
+      "PENDING": "En attente",
+      "ASSIGNED": "Assignée",
+      "IN_PROGRESS": "En cours",
+      "COMPLETED": "Terminée",
+      "CANCELLED": "Annulée",
+      "REFUSED": "Refusée"
+    }
+  },
+  "driver": {
+    "title": "Chauffeurs",
+    "status": {
+      "ACTIVE": "Actif",
+      "ON_LEAVE": "En congé",
+      "SUSPENDED": "Suspendu"
+    },
+    "sheet": "Fiche journalière chauffeur",
+    "fields": {
+      "name": "Nom chauffeur",
+      "driverId": "ID chauffeur",
+      "vehicleId": "ID véhicule",
+      "trips": "Nombre de courses",
+      "accepted": "Courses acceptées",
+      "refused": "Courses refusées",
+      "cancelled": "Courses annulées",
+      "loginAt": "Heure de connexion",
+      "breakAt": "Heure de pause",
+      "logoutAt": "Heure de fin de session",
+      "refuelAt": "Heure de refueling",
+      "punctuality": "Ponctualité",
+      "presentation": "Présentation",
+      "rulesCompliance": "Respect des règles",
+      "clientFeedback": "Retour client",
+      "driverFeedback": "Retour chauffeur",
+      "lateCount": "Retards",
+      "absences": "Absences",
+      "incidents": "Incidents",
+      "supervisorComment": "Commentaire superviseur"
+    }
+  },
+  "user": {
+    "status": {
+      "active": "Actif",
+      "inactive": "Inactif"
+    }
+  },
+  "vehicle": {
+    "title": "Véhicules",
+    "fields": {
+      "plate": "Immatriculation",
+      "brand": "Marque",
+      "model": "Modèle",
+      "year": "Année",
+      "fuelType": "Carburant",
+      "currentKm": "KM actuel",
+      "status": "Statut",
+      "insuranceExpiry": "Expiration assurance",
+      "registrationExpiry": "Expiration carte grise",
+      "driver": "Chauffeur assigné"
+    },
+    "status": {
+      "AVAILABLE": "Disponible",
+      "ON_TRIP": "En course",
+      "MAINTENANCE": "Maintenance",
+      "OUT_OF_SERVICE": "Hors service"
+    }
+  }
+}
