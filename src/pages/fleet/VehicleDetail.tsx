@@ -7,7 +7,7 @@ import { Button } from "../../components/ui/Button";
 import { StatCard } from "../../components/ui/StatCard";
 import { Icon } from "../../components/layout/Icon";
 import { vehicles, drivers, fuelEntries, incidents, checklists } from "../../lib/mock-data";
-import { formatDate, formatCurrency } from "../../lib/utils";
+import { formatDate, formatCurrency, oilChangeStatus } from "../../lib/utils";
 import { Table } from "../../components/ui/Table";
 
 export default function VehicleDetail() {
@@ -56,6 +56,16 @@ export default function VehicleDetail() {
             <Row label={t("vehicle.fields.driver")}  value={driver?.name ?? "—"} />
             <Row label={t("vehicle.fields.insuranceExpiry")}    value={formatDate(v.insuranceExpiry)} />
             <Row label={t("vehicle.fields.registrationExpiry")} value={formatDate(v.registrationExpiry)} />
+            <Row label={t("vehicle.fields.lastOilChange")}      value={
+              v.lastOilChange ? (
+                <span className="flex items-center gap-2">
+                  {formatDate(v.lastOilChange)}
+                  {(() => { const st = oilChangeStatus(v); const tone = st === "ok" ? "success" : st === "due_soon" ? "warning" : "danger"; return <Badge tone={tone}>{t(`vehicle.oilChange.${st}`)}</Badge>; })()}
+                </span>
+              ) : "—"
+            } />
+            <Row label={t("vehicle.fields.kmAtLastOilChange")}  value={v.kmAtLastOilChange ? <span className="tabular-nums">{v.kmAtLastOilChange.toLocaleString()} km</span> : "—"} />
+            <Row label={t("vehicle.fields.nextOilChangeKm")}    value={v.kmAtLastOilChange ? <span className="tabular-nums font-medium">{(v.kmAtLastOilChange + 5000).toLocaleString()} km</span> : "—"} />
           </dl>
         </Card>
 

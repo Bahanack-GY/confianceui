@@ -84,7 +84,8 @@
     "procSuppliers": "Suppliers",
     "procServices": "Services",
     "procExpenses": "Expenses",
-    "executive": "Executive View"
+    "executive": "Executive View",
+    "reports": "Reports"
   },
   "procurement": {
     "title": "Procurement",
@@ -464,13 +465,40 @@
       "status": "Status",
       "insuranceExpiry": "Insurance expiry",
       "registrationExpiry": "Registration expiry",
-      "driver": "Assigned driver"
+      "driver": "Assigned driver",
+      "lastOilChange": "Last oil change",
+      "kmAtLastOilChange": "KM at last oil change",
+      "nextOilChangeKm": "Next service (KM)"
     },
     "status": {
       "AVAILABLE": "Available",
       "ON_TRIP": "On trip",
       "MAINTENANCE": "Maintenance",
       "OUT_OF_SERVICE": "Out of service"
+    },
+    "oilChange": {
+      "ok": "OK",
+      "due_soon": "Due soon",
+      "overdue": "Overdue",
+      "section": "Oil change tracking",
+      "sectionSub": "Last oil change · threshold 5,000 km or 90 days",
+      "daysSince": "Days since",
+      "kmSince": "KM since"
+    }
+  },
+  "reports": {
+    "title": "Report Center",
+    "subtitle": "Generate and download operational reports",
+    "generate": "Generate CSV",
+    "generating": "Generating...",
+    "generated": "Report downloaded",
+    "period": "Period",
+    "categories": {
+      "dispatch": "Dispatch",
+      "fleet": "Fleet",
+      "finance": "Finance",
+      "compliance": "Compliance",
+      "incidents": "Incidents"
     }
   }
 }

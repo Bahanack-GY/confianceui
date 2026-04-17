@@ -1,5 +1,12 @@
 import type { Driver, Expense, FuelEntry, Incident, PurchaseRequest, ServiceTracking, ShiftReport, Supplier, Trip, Vehicle, VehicleChecklist, DailyDriverSheet } from "../types";
 
+const _today = new Date();
+const daysAgo = (n: number) => {
+  const d = new Date(_today);
+  d.setDate(d.getDate() - n);
+  return d.toISOString().slice(0, 10);
+};
+
 export const drivers: Driver[] = [
   { id: "d-01", employeeId: "DRV-001", name: "Jean Dibango", phone: "+237 699 10 01 01", status: "ACTIVE",    hiredAt: "2024-03-12", licenseExpiry: "2027-03-12", rating: 4.8 },
   { id: "d-02", employeeId: "DRV-002", name: "Marc Lontsi",  phone: "+237 699 10 01 02", status: "ACTIVE",    hiredAt: "2023-10-01", licenseExpiry: "2026-09-12", rating: 4.6 },
@@ -10,20 +17,13 @@ export const drivers: Driver[] = [
 ];
 
 export const vehicles: Vehicle[] = [
-  { id: "v-01", plate: "CE-001-AB", brand: "Mercedes", model: "E-Class",     year: 2023, fuelType: "DIESEL",   condition: "new",  initialKm: 0,     currentKm: 48210,  status: "AVAILABLE",      insuranceExpiry: "2026-11-01", registrationExpiry: "2027-02-14", assignedDriverId: "d-01" },
-  { id: "v-02", plate: "CE-002-AB", brand: "Toyota",   model: "Land Cruiser", year: 2022, fuelType: "DIESEL",   condition: "used", initialKm: 31000, currentKm: 92140,  status: "ON_TRIP",        insuranceExpiry: "2026-05-20", registrationExpiry: "2026-12-10", assignedDriverId: "d-02" },
-  { id: "v-03", plate: "CE-003-AB", brand: "BMW",      model: "5 Series",    year: 2024, fuelType: "GASOLINE", condition: "new",  initialKm: 0,     currentKm: 18780,  status: "AVAILABLE",      insuranceExpiry: "2026-08-15", registrationExpiry: "2028-01-30", assignedDriverId: "d-03" },
-  { id: "v-04", plate: "CE-004-AB", brand: "Audi",     model: "A6",          year: 2021, fuelType: "HYBRID",   condition: "used", initialKm: 54200, currentKm: 104500, status: "MAINTENANCE",    insuranceExpiry: "2026-04-30", registrationExpiry: "2026-07-01" },
-  { id: "v-05", plate: "CE-005-AB", brand: "Lexus",    model: "ES",          year: 2023, fuelType: "HYBRID",   condition: "new",  initialKm: 0,     currentKm: 35120,  status: "AVAILABLE",      insuranceExpiry: "2027-01-11", registrationExpiry: "2027-06-22", assignedDriverId: "d-05" },
-  { id: "v-06", plate: "CE-006-AB", brand: "Toyota",   model: "Camry",       year: 2020, fuelType: "GASOLINE", condition: "used", initialKm: 78500, currentKm: 142980, status: "OUT_OF_SERVICE", insuranceExpiry: "2026-03-01", registrationExpiry: "2026-05-15" },
+  { id: "v-01", plate: "CE-001-AB", brand: "Mercedes", model: "E-Class",     year: 2023, fuelType: "DIESEL",   condition: "new",  initialKm: 0,     currentKm: 48210,  status: "AVAILABLE",      insuranceExpiry: "2026-11-01", registrationExpiry: "2027-02-14", assignedDriverId: "d-01", lastOilChange: daysAgo(45),  kmAtLastOilChange: 43500 },
+  { id: "v-02", plate: "CE-002-AB", brand: "Toyota",   model: "Land Cruiser", year: 2022, fuelType: "DIESEL",   condition: "used", initialKm: 31000, currentKm: 92140,  status: "ON_TRIP",        insuranceExpiry: "2026-05-20", registrationExpiry: "2026-12-10", assignedDriverId: "d-02", lastOilChange: daysAgo(12),  kmAtLastOilChange: 88200 },
+  { id: "v-03", plate: "CE-003-AB", brand: "BMW",      model: "5 Series",    year: 2024, fuelType: "GASOLINE", condition: "new",  initialKm: 0,     currentKm: 18780,  status: "AVAILABLE",      insuranceExpiry: "2026-08-15", registrationExpiry: "2028-01-30", assignedDriverId: "d-03", lastOilChange: daysAgo(92),  kmAtLastOilChange: 13400 },
+  { id: "v-04", plate: "CE-004-AB", brand: "Audi",     model: "A6",          year: 2021, fuelType: "HYBRID",   condition: "used", initialKm: 54200, currentKm: 104500, status: "MAINTENANCE",    insuranceExpiry: "2026-04-30", registrationExpiry: "2026-07-01",                             lastOilChange: daysAgo(61),  kmAtLastOilChange: 98900 },
+  { id: "v-05", plate: "CE-005-AB", brand: "Lexus",    model: "ES",          year: 2023, fuelType: "HYBRID",   condition: "new",  initialKm: 0,     currentKm: 35120,  status: "AVAILABLE",      insuranceExpiry: "2027-01-11", registrationExpiry: "2027-06-22", assignedDriverId: "d-05", lastOilChange: daysAgo(28),  kmAtLastOilChange: 30500 },
+  { id: "v-06", plate: "CE-006-AB", brand: "Toyota",   model: "Camry",       year: 2020, fuelType: "GASOLINE", condition: "used", initialKm: 78500, currentKm: 142980, status: "OUT_OF_SERVICE", insuranceExpiry: "2026-03-01", registrationExpiry: "2026-05-15",                             lastOilChange: daysAgo(118), kmAtLastOilChange: 132000 },
 ];
-
-const today = new Date();
-const daysAgo = (n: number) => {
-  const d = new Date(today);
-  d.setDate(d.getDate() - n);
-  return d.toISOString().slice(0, 10);
-};
 
 export const trips: Trip[] = Array.from({ length: 24 }).map((_, i) => {
   const statuses: Trip["status"][] = ["COMPLETED","COMPLETED","COMPLETED","IN_PROGRESS","ASSIGNED","CANCELLED","REFUSED","PENDING"];

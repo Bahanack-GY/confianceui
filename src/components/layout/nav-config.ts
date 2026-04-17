@@ -85,6 +85,12 @@ export const NAV_BY_ROLE: Record<Role, NavSection[]> = {
         { to: "/admin/compliance",    label: "nav.compliance",   iconKey: "shield" },
       ],
     },
+    {
+      label: "Rapports",
+      items: [
+        { to: "/admin/reports",       label: "nav.reports",      iconKey: "download" },
+      ],
+    },
   ],
   DISPATCH_SUPERVISOR: [
     {
@@ -94,6 +100,7 @@ export const NAV_BY_ROLE: Record<Role, NavSection[]> = {
         { to: "/dispatch-supervisor/handover",        label: "nav.handover",     iconKey: "handover" },
         { to: "/dispatch-supervisor/incidents",       label: "nav.incidents",    iconKey: "alert" },
         { to: "/dispatch-supervisor/trips",           label: "nav.trips",        iconKey: "route" },
+        { to: "/dispatch-supervisor/reports",         label: "nav.reports",      iconKey: "download" },
       ],
     },
   ],
@@ -104,6 +111,7 @@ export const NAV_BY_ROLE: Record<Role, NavSection[]> = {
         { to: "/dispatch-agent/shift-reports",   label: "nav.shiftReports",   iconKey: "clipboard" },
         { to: "/dispatch-agent/incidents",       label: "nav.reportIncident", iconKey: "alert" },
         { to: "/dispatch-agent/trips",           label: "nav.trips",          iconKey: "route" },
+        { to: "/dispatch-agent/reports",         label: "nav.reports",        iconKey: "download" },
       ],
     },
   ],
@@ -118,6 +126,7 @@ export const NAV_BY_ROLE: Record<Role, NavSection[]> = {
         { to: "/fleet/checklists",    label: "nav.checklists",   iconKey: "checklist" },
         { to: "/fleet/incidents",     label: "nav.incidents",    iconKey: "alert" },
         { to: "/fleet/compliance",    label: "nav.compliance",   iconKey: "shield" },
+        { to: "/fleet/reports",       label: "nav.reports",      iconKey: "download" },
       ],
     },
   ],

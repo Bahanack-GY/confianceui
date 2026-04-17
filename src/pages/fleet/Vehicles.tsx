@@ -13,8 +13,7 @@ import { Modal } from "../../components/ui/Modal";
 import { FormField } from "../../components/ui/FormField";
 import { Icon } from "../../components/layout/Icon";
 import { vehicles, drivers } from "../../lib/mock-data";
-import { formatDate } from "../../lib/utils";
-import { cn } from "../../lib/utils";
+import { formatDate, oilChangeStatus, cn } from "../../lib/utils";
 import type { FuelType, Vehicle } from "../../types";
 
 const STATUS_TONE: Record<Vehicle["status"], "success" | "brand" | "warning" | "danger"> = {
@@ -271,6 +270,16 @@ export default function Vehicles() {
             { key: "km",    header: t("vehicle.fields.currentKm"),       cell: (r) => <span className="tabular-nums">{r.currentKm.toLocaleString()} km</span>, align: "right" },
             { key: "drv",   header: t("vehicle.fields.driver"),          cell: (r) => drivers.find((d) => d.id === r.assignedDriverId)?.name ?? "—" },
             { key: "ins",   header: t("vehicle.fields.insuranceExpiry"), cell: (r) => formatDate(r.insuranceExpiry) },
+            { key: "oil",   header: t("vehicle.fields.lastOilChange"),   cell: (r) => {
+              const st = oilChangeStatus(r);
+              const tone = st === "ok" ? "success" : st === "due_soon" ? "warning" : "danger";
+              return (
+                <div className="flex items-center gap-2">
+                  <span className="tabular-nums text-[12.5px]">{r.lastOilChange ? formatDate(r.lastOilChange) : "—"}</span>
+                  <Badge tone={tone}>{t(`vehicle.oilChange.${st}`)}</Badge>
+                </div>
+              );
+            }},
             { key: "st",    header: t("common.status"),                  cell: (r) => <Badge tone={STATUS_TONE[r.status]}>{t(`vehicle.status.${r.status}`)}</Badge> },
           ]}
         />

@@ -60,6 +60,32 @@ export function inDateRange(dateStr: string, range: DateRange): boolean {
   return true;
 }
 
+export function generateCSV(headers: string[], rows: (string | number | null | undefined)[][]): string {
+  const esc = (v: string | number | null | undefined): string => {
+    const s = String(v ?? "");
+    return s.includes(",") || s.includes('"') || s.includes("\n") ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  return [headers, ...rows].map((row) => row.map(esc).join(",")).join("\n");
+}
+
+export function downloadCSV(filename: string, csv: string): void {
+  const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+  const url  = URL.createObjectURL(blob);
+  const a    = Object.assign(document.createElement("a"), { href: url, download: filename });
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+export function oilChangeStatus(v: { currentKm: number; lastOilChange?: string; kmAtLastOilChange?: number }): "ok" | "due_soon" | "overdue" {
+  const daysSince = v.lastOilChange ? (Date.now() - new Date(v.lastOilChange).getTime()) / 86400000 : Infinity;
+  const kmSince   = v.kmAtLastOilChange != null ? v.currentKm - v.kmAtLastOilChange : Infinity;
+  if (daysSince > 90 || kmSince > 5000) return "overdue";
+  if (daysSince > 75 || kmSince > 4500) return "due_soon";
+  return "ok";
+}
+
 export function initials(name: string) {
   return name
     .split(/\s+/)

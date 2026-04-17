@@ -77,6 +77,8 @@ export interface Vehicle {
   insuranceExpiry: string;
   registrationExpiry: string;
   assignedDriverId?: string;
+  lastOilChange?: string;
+  kmAtLastOilChange?: number;
 }
 
 export type IncidentType =

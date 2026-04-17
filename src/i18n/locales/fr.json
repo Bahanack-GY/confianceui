@@ -84,7 +84,8 @@
     "procSuppliers": "Fournisseurs",
     "procServices": "Prestations",
     "procExpenses": "Dépenses",
-    "executive": "Vue Exécutive"
+    "executive": "Vue Exécutive",
+    "reports": "Rapports"
   },
   "procurement": {
     "title": "Achats & Approvisionnement",
@@ -464,13 +465,40 @@
       "status": "Statut",
       "insuranceExpiry": "Expiration assurance",
       "registrationExpiry": "Expiration carte grise",
-      "driver": "Chauffeur assigné"
+      "driver": "Chauffeur assigné",
+      "lastOilChange": "Dernière vidange",
+      "kmAtLastOilChange": "KM à la vidange",
+      "nextOilChangeKm": "Prochain entretien (KM)"
     },
     "status": {
       "AVAILABLE": "Disponible",
       "ON_TRIP": "En course",
       "MAINTENANCE": "Maintenance",
       "OUT_OF_SERVICE": "Hors service"
+    },
+    "oilChange": {
+      "ok": "OK",
+      "due_soon": "Bientôt due",
+      "overdue": "En retard",
+      "section": "Suivi des vidanges",
+      "sectionSub": "Dernière vidange · seuil 5 000 km ou 90 jours",
+      "daysSince": "Jours depuis",
+      "kmSince": "KM depuis"
+    }
+  },
+  "reports": {
+    "title": "Centre de Rapports",
+    "subtitle": "Générez et téléchargez les rapports opérationnels",
+    "generate": "Générer CSV",
+    "generating": "Génération...",
+    "generated": "Rapport téléchargé",
+    "period": "Période",
+    "categories": {
+      "dispatch": "Dispatch",
+      "fleet": "Flotte",
+      "finance": "Finance",
+      "compliance": "Conformité",
+      "incidents": "Incidents"
     }
   }
 }

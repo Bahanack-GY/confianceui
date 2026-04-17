@@ -11,6 +11,7 @@ import Settings from "./pages/Settings";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminUsers from "./pages/admin/Users";
 import ExecutiveDashboard from "./pages/admin/ExecutiveDashboard";
+import AdminReports from "./pages/admin/Reports";
 
 import SupDashboard from "./pages/dispatch-supervisor/Dashboard";
 import SupShiftReports from "./pages/dispatch-supervisor/ShiftReports";
@@ -18,12 +19,14 @@ import SupShiftReportForm from "./pages/dispatch-supervisor/ShiftReportForm";
 import SupHandover from "./pages/dispatch-supervisor/Handover";
 import SupIncidents from "./pages/dispatch-supervisor/Incidents";
 import SupTrips from "./pages/dispatch-supervisor/Trips";
+import SupReports from "./pages/dispatch-supervisor/Reports";
 
 import AgentDashboard from "./pages/dispatch-agent/Dashboard";
 import AgentShiftReports from "./pages/dispatch-agent/ShiftReports";
 import AgentShiftReportForm from "./pages/dispatch-agent/ShiftReportForm";
 import AgentIncidents from "./pages/dispatch-agent/Incidents";
 import AgentTrips from "./pages/dispatch-agent/Trips";
+import AgentReports from "./pages/dispatch-agent/Reports";
 
 import FleetDashboard from "./pages/fleet/Dashboard";
 import FleetVehicles from "./pages/fleet/Vehicles";
@@ -35,6 +38,7 @@ import FleetFuel from "./pages/fleet/Fuel";
 import FleetChecklists from "./pages/fleet/Checklists";
 import FleetIncidents from "./pages/fleet/Incidents";
 import FleetCompliance from "./pages/fleet/Compliance";
+import FleetReports from "./pages/fleet/Reports";
 
 import ProcurementDashboard from "./pages/procurement/Dashboard";
 import ProcurementRequests from "./pages/procurement/Requests";
@@ -65,6 +69,7 @@ export default function App() {
         {/* ADMIN */}
         <Route path="/admin"                 element={<ProtectedRoute roles={["ADMIN"]}><AdminDashboard /></ProtectedRoute>} />
         <Route path="/admin/executive"       element={<ProtectedRoute roles={["ADMIN"]}><ExecutiveDashboard /></ProtectedRoute>} />
+        <Route path="/admin/reports"         element={<ProtectedRoute roles={["ADMIN"]}><AdminReports /></ProtectedRoute>} />
         <Route path="/admin/users"           element={<ProtectedRoute roles={["ADMIN"]}><AdminUsers /></ProtectedRoute>} />
         <Route path="/admin/shift-reports"   element={<ProtectedRoute roles={["ADMIN"]}><SupShiftReports /></ProtectedRoute>} />
         <Route path="/admin/incidents"       element={<ProtectedRoute roles={["ADMIN"]}><FleetIncidents /></ProtectedRoute>} />
@@ -82,6 +87,7 @@ export default function App() {
         <Route path="/dispatch-supervisor/handover"          element={<ProtectedRoute roles={["DISPATCH_SUPERVISOR"]}><SupHandover /></ProtectedRoute>} />
         <Route path="/dispatch-supervisor/incidents"         element={<ProtectedRoute roles={["DISPATCH_SUPERVISOR"]}><SupIncidents /></ProtectedRoute>} />
         <Route path="/dispatch-supervisor/trips"             element={<ProtectedRoute roles={["DISPATCH_SUPERVISOR"]}><SupTrips /></ProtectedRoute>} />
+        <Route path="/dispatch-supervisor/reports"           element={<ProtectedRoute roles={["DISPATCH_SUPERVISOR"]}><SupReports /></ProtectedRoute>} />
 
         {/* DISPATCH AGENT */}
         <Route path="/dispatch-agent"                   element={<ProtectedRoute roles={["DISPATCH_AGENT"]}><AgentDashboard /></ProtectedRoute>} />
@@ -89,6 +95,7 @@ export default function App() {
         <Route path="/dispatch-agent/shift-reports/new" element={<ProtectedRoute roles={["DISPATCH_AGENT"]}><AgentShiftReportForm /></ProtectedRoute>} />
         <Route path="/dispatch-agent/incidents"         element={<ProtectedRoute roles={["DISPATCH_AGENT"]}><AgentIncidents /></ProtectedRoute>} />
         <Route path="/dispatch-agent/trips"             element={<ProtectedRoute roles={["DISPATCH_AGENT"]}><AgentTrips /></ProtectedRoute>} />
+        <Route path="/dispatch-agent/reports"           element={<ProtectedRoute roles={["DISPATCH_AGENT"]}><AgentReports /></ProtectedRoute>} />
 
         {/* FLEET */}
         <Route path="/fleet"                 element={<ProtectedRoute roles={["FLEET_MANAGER"]}><FleetDashboard /></ProtectedRoute>} />
@@ -101,6 +108,7 @@ export default function App() {
         <Route path="/fleet/checklists"      element={<ProtectedRoute roles={["FLEET_MANAGER"]}><FleetChecklists /></ProtectedRoute>} />
         <Route path="/fleet/incidents"       element={<ProtectedRoute roles={["FLEET_MANAGER"]}><FleetIncidents /></ProtectedRoute>} />
         <Route path="/fleet/compliance"      element={<ProtectedRoute roles={["FLEET_MANAGER"]}><FleetCompliance /></ProtectedRoute>} />
+        <Route path="/fleet/reports"         element={<ProtectedRoute roles={["FLEET_MANAGER"]}><FleetReports /></ProtectedRoute>} />
 
         {/* PROCUREMENT */}
         <Route path="/procurement"           element={<ProtectedRoute roles={["FLEET_MANAGER","ADMIN"]}><ProcurementDashboard /></ProtectedRoute>} />
