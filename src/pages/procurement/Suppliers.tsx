@@ -85,7 +85,7 @@ export default function Suppliers() {
   const [createOpen, setCreateOpen] = useState(false);
   const [detailSupplier, setDetailSupplier] = useState<Supplier | null>(null);
 
-  const now = new Date();
+
 
   const rows = useMemo(() => suppliers.filter((s) => {
     if (catFilter && s.category !== catFilter) return false;
